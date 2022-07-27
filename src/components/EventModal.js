@@ -80,7 +80,7 @@ export default function EventModal() {
               <span className="material-icons-outlined text-gray-400">
               schedule
             </span>
-              <p>{daySelected.format("dddd, MMMM DD")}</p>
+              <p className='text-red-800'>{daySelected.format("dddd, MMMM DD")}</p>
               <span className="material-icons-outlined text-gray-400">
               segment
             </span>

@@ -17,17 +17,19 @@ export default function Day({day, rowIdx}) {
         return day.format("DD-MM-YY") === dayjs().format("DD-MM-YY") ? "bg-blue-600 text-white w-7" : "";
     }
 
-    return (<div className="border bg-gray-100 border-gray-300 flex flex-col">
-            <header className="flex flex-col items-center">
-                {rowIdx === 0 && (<p className="text-sm mt-1">
-                        {day.format("ddd").toUpperCase()}
-                    </p>)}
-                <p
-                    className={`text-sm p-1 my-1 text-center  ${getCurrentDayClass()}`}
-                >
-                    {day.format("DD")}
-                </p>
-            </header>
+    return (
+        <div className="border bg-gray-100  flex flex-col">
+        <header className="flex flex-col items-center ">
+            {rowIdx === 0 && (<p className="text-sm mt-1 h-10 border border-black w-full flex align-center justify-center">
+                {day.format("ddd").toUpperCase()}
+            </p>)}
+
+            <p
+                className={`text-sm p-1 my-1 text-center  ${getCurrentDayClass()}`}
+            >
+                {day.format("DD")}
+            </p>
+        </header>
             <div
                 className="flex-1 cursor-pointer"
                 onClick={() => {
@@ -43,5 +45,5 @@ export default function Day({day, rowIdx}) {
                         {evt.title}
                     </div>))}
             </div>
-        </div>);
+        </div>)
 }
