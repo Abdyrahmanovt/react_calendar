@@ -1,6 +1,7 @@
 import dayjs from "dayjs";
 import React, {useContext, useState, useEffect} from "react";
 import GlobalContext from "../context/GlobalContext";
+import './style.css'
 
 export default function Day({day, rowIdx}) {
     const [dayEvents, setDayEvents] = useState([]);
@@ -18,15 +19,14 @@ export default function Day({day, rowIdx}) {
     }
 
     return (
-        <div className="border bg-gray-100  flex flex-col">
-        <header className="flex flex-col items-center ">
-            {rowIdx === 0 && (<p className="text-sm mt-1 h-10 border border-black w-full flex align-center justify-center">
+        <div className="border border-black bg-gray-100  flex flex-col">
+            {rowIdx === 0 && (<p className="text-sm mt-1 h-10 border days-week w-full flex align-center justify-center">
                 {day.format("ddd").toUpperCase()}
             </p>)}
+        <header className="flex flex-col items-center ">
 
-            <p
-                className={`text-sm p-1 my-1 text-center  ${getCurrentDayClass()}`}
-            >
+
+            <p className={`text-sm p-1 my-1 text-center  ${getCurrentDayClass()}`}>
                 {day.format("DD")}
             </p>
         </header>
